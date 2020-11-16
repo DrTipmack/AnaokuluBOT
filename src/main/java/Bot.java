@@ -12,7 +12,7 @@ import java.net.Socket;
 
 public class Bot extends ListenerAdapter {
     private FileManager fm;
-    public String prefix = "!";
+    public String prefix = "!"; //What special character every command will start with
 
     public static void main(String[] args) throws LoginException {
 
@@ -71,12 +71,8 @@ public class Bot extends ListenerAdapter {
 
                 String answer = "This command doesn't exist";
                 switch (command) {
-                    case "pingserver":
-                        String status;
-                        if (pingHost("google.com", 8884, 20000))
-                            answer = "ONLINE";
-                        else
-                            answer = "doesnt work :(";
+                    case "a":
+                        //Do stuff
                     break;
 
                     case "add":
@@ -92,15 +88,6 @@ public class Bot extends ListenerAdapter {
                 }
                 channel.sendMessage(answer).queue();
             }
-        }
-    }
-
-    public static boolean pingHost(String host, int port, int timeout) {
-        try (Socket socket = new Socket()) {
-            socket.connect(new InetSocketAddress(host, port), timeout);
-            return true;
-        } catch (IOException e) {
-            return false; // Either timeout or unreachable or failed DNS lookup.
         }
     }
 }

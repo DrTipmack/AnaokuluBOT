@@ -1,5 +1,9 @@
 import java.io.*;
 
+//I made this class to edit files etc, and stuff like reat token.txt. It is not required
+//but it is useful. If you decide to get rid of this, replace 'FileManager.getLine("token.txt")'
+//on Bot.java line 21 with the token. e.g: '.createDefault("1230e9dsujSHkoeri945tkf339345ghjk06978z")'
+
 public class FileManager {
     static String defFileName;
 
